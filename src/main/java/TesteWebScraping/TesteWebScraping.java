@@ -21,7 +21,7 @@ public class TesteWebScraping {
         Element link = response.select(".alert a[href]").first();
         String linkTiss = link.attr("href");
         
-        //Concatenando as informações já coletadas.
+        //Concatenando as informações já coletadas, fiz esta concatenação porque os hrefs não são URLs completas.
         String linkTissFull = baseSite + linkTiss;
         
         //Através do código html da página referenciei/filtrei apenas o que tinha por objetivo.
