@@ -29,15 +29,15 @@ public class TesteWebScraping {
         Element link2 = response2.select("table a[href]").first();
         String linkTissPdf = link2.attr("href");
         
-        //Concatenando endereços
+        //Concatenando endereços url
         String linkTissPdfFinal = baseSite + linkTissPdf;
         salvaPDF(linkTissPdfFinal);
     }
     
-    //Salvando o arquivo mais atual da tabela padrao tiss componente_organizaciona.
+    //Salvando o arquivo mais atual da tabela padrao tiss componente_organizacional.
     public static void salvaPDF(String url) throws IOException {
         URL urlPdf = new URL(url);
-        File destination = new File("linkTiss.pdf");
+        File destination = new File("componente_organizacional.pdf");
         FileUtils.copyURLToFile(urlPdf, destination);
     }
     
